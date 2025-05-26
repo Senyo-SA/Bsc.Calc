@@ -5,21 +5,33 @@
 }
 
 .Wallpage{
-    background-color: transparent; 
+    background-color: #282c34; 
     display: flex;
-    flex-direction: row;
     font-family: lato sans-serif;
     font-size: large;
+    justify-content: center;
     text-align: center;
     min-height: 100vh;
 }
 
 
+.Spinners{
+    align-items: center;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-content: center;
+    max-width: 20%;
+}
+
+
 .Add_spinner{
-    background-color: #282c34;
-    height: 20vmax;
+    align-self: center;
+    background-color: transparent;
+    height: 4vmax;
+    justify-self: center;
     pointer-events: none;
-    width: 20vmax;
+    width: 4vmax;
 }
 
 @media(prefers-reduced-motion:no-preference){
@@ -37,3 +49,18 @@
         transform:  rotate(360deg);
     }
 }
+
+
+.Calculator{
+    align-self: center;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgb(134, 134, 86), rgba(53, 114, 114, 0.774));
+    border: 1px solid rgba(255,255,255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,37);
+    border-radius: 4%;
+    min-height: 90%;
+    min-width: 25%;
+    position: absolute ;
+    -webkit-backdrop-filter: blur(10px);
+}
+

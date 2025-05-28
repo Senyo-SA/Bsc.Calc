@@ -2,11 +2,11 @@
 
 function Calculate(){
 
-    const numbers: any = [1, 2, 3, 'C', 4, 5, 6, '+', 7, 8, 9, '-', '.', 0, '=', 'X']
+    const numbers: any = [1, 2, 3, '+', 4, 5, 6, '-', 7, 8, 9, 'x', '.', 0, 'C', '÷', 'DEL', '√', '%', '=']
     const display = []
 
-    for(let num:number = 0; num < 16; num++){
-        display.push(<button className="Input">{numbers[num]}</button>)
+    for(let num:number = 0; num < 20; num++){
+        display.push(<button key={num} className="Input">{numbers[num]}</button>)
     }
 
 return(

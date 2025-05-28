@@ -66,7 +66,7 @@
 
 .Display_area{
     backdrop-filter: blur(10px);
-    background: linear-gradient(135deg, rgb(110, 108, 138), rgba(53, 114, 114, 0.774));
+    background: linear-gradient(135deg, rgb(223, 217, 132), rgba(245, 243, 157, 0.959));
     border: 1px solid rgba(81, 92, 68, 0.568);
     box-shadow: 0 8px 32px 0 rgba(0,0,0,37);
     border-radius: 4%;
@@ -83,25 +83,25 @@
     display: grid;
     grid-gap: 0;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     height: 55vh;
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 65%;
-    padding-top: 12%;
+    padding-top: 6%;
     position: fixed ;
     width: 100%;
 }
 
 .Input{
     backdrop-filter: blur(10px);
-    background: linear-gradient(135deg, rgb(231, 220, 63), rgba(223, 220, 84, 0.959));
+    background: linear-gradient(135deg, rgb(223, 217, 132), rgba(245, 243, 157, 0.959));
     border: 1px solid rgba(81, 92, 68, 0.568);
     box-shadow: 0 8px 32px 0 rgba(0,0,0,37);
     border-radius: 15px;
     color: #282c34;
     font-size: large;
-    height: 60%;
+    height: 80%;
     justify-self: center;
     width: 80%;
 

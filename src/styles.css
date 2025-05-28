@@ -88,7 +88,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 65%;
-    padding-top: 6%;
+    padding-top: 4%;
     position: fixed ;
     width: 100%;
 }
@@ -101,7 +101,7 @@
     border-radius: 15px;
     color: #282c34;
     font-size: large;
-    height: 80%;
+    height: 70%;
     justify-self: center;
     width: 80%;
 

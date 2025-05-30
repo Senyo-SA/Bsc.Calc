@@ -1,14 +1,14 @@
-def Adding():
+def Adding( num ):
     print('yes') 
 
 
-def Minus():
+def Minus(num):
     print('yes')
 
 
-def Multipy():
+def Multipy(num):
     print('yes')
 
 
-def Dividing():
+def Dividing(num):
     print('yes')

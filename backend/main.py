@@ -3,6 +3,15 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+@app.get('/')
+
+def index():
+    return {'message': 'Calculate'}
+
+
+
+"""
+
 class CalculationRequest(BaseModel):
     expression: str
 
@@ -14,3 +23,5 @@ def calculate(req: CalculationRequest):
         return {"result": result}
     except:
         return {"error": "Invalid expression"}
+
+"""

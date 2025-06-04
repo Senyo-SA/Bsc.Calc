@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react';
 
 function Calculate() {
 
-  const [num_display, setNum_display] = useState([])
+  const [num_display, setNum_display] = useState([''])
 
   async function show_num(){
     try{
       const response = await Api.get('/display');
-      setNum_display(response.data);
+      setNum_display((response.data.expression.toString()));
     }catch(error){
       console.error('error fetching fruits', error)
     }
@@ -29,12 +29,12 @@ function Calculate() {
     show_num();
   }, []);
 
-  console.log(num_display[0])
+  console.log(num_display)
 
   return (
     <div className="Calculator">
       <form action="get" className="Display_area">
-        
+        {num_display}
       </form>
 
       <div className="Input_area"> {display} </div>

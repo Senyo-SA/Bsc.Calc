@@ -65,16 +65,20 @@
 
 
 .Display_area{
+    align-content: flex-end;
     backdrop-filter: blur(10px);
     background: linear-gradient(135deg, rgb(223, 217, 132), rgba(245, 243, 157, 0.959));
     border: 1px solid rgba(81, 92, 68, 0.568);
     box-shadow: 0 8px 32px 0 rgba(0,0,0,37);
     border-radius: 4%;
+    font-size: xx-large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     left: 6%;
     margin-top: 5%;
     min-height: 30%;
     min-width: 88%;
     position: absolute ;
+    text-align:end;
 }
 
 

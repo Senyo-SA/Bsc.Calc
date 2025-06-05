@@ -71,9 +71,7 @@
     border: 1px solid rgba(81, 92, 68, 0.568);
     box-shadow: 0 8px 32px 0 rgba(0,0,0,37);
     border-radius: 4%;
-    font-size: xx-large;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    left: 6%;
+    left: 2%;
     margin-top: 5%;
     min-height: 30%;
     min-width: 88%;
@@ -111,3 +109,11 @@
 
 }
 
+
+.Input_Area{
+    background-color: transparent;
+    border: none;
+    font-size: 26px;
+    margin-right: 4px;
+    text-align: end;
+}

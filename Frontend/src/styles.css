@@ -115,5 +115,6 @@
     border: none;
     font-size: 26px;
     margin-right: 4px;
+    max-width: 50%;
     text-align: end;
 }

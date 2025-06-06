@@ -5,8 +5,7 @@ import uvicorn
 
 
 class CalculationRequest(BaseModel):
-    expression: list
-
+    expression: str
 
 app = FastAPI() 
 
@@ -23,11 +22,12 @@ app.add_middleware(
     allow_headers=['*']
     )
 
-input_list = ['0']
+update = ['0']
 
-@app.get("/display", response_model=CalculationRequest)
+
+@app.get("/calculate", response_model=CalculationRequest)
 def show_display():
-    result = CalculationRequest(expression=(input_list)) 
+    result = CalculationRequest(expression = update[0]) 
     try:
         return result 
     except:
@@ -37,10 +37,11 @@ def show_display():
 
 @app.post("/calculate")
 def calculate(req: CalculationRequest):
-    expression = req.expression 
+    expression = req.expression
     try:
-        result = eval(expression)
-        return {"result": result}
+        expression = eval(expression)
+        update[0] = str(expression)
+        return str(expression)
     except:
         return {"error": "Invalid expression"}
     

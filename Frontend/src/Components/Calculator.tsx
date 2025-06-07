@@ -34,13 +34,20 @@ function Calculate() {
   function show_digits(value: any){
 
     if (value === '='){
-      console.log(digits)
+
       perform_calc(digits)
 
       setNum_display(digits)
       setDigits('')
-     
 
+      window.location.reload()
+
+    }
+    else if (value === 'DEL'){
+      setDigits(digits.slice(0, -1))
+    }
+    else if (value === 'C'){
+      setDigits('')
     }
     else {
       setDigits(digits + value)
@@ -62,10 +69,6 @@ function Calculate() {
       </button>
     );
   }
-
-  console.log(digits)
-  console.log(num_display)
-
 
   return (
     <div className="Calculator">

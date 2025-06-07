@@ -1,5 +1,5 @@
 import Api from '../Api'
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Calculate() {
 
@@ -10,38 +10,44 @@ function Calculate() {
   async function show_num(){
     try{
       const response = await Api.get('/calculate');
-      console.log(response)
       setNum_display((response.data.expression));
     }catch(error){
       console.error('error processing numbers', error)
     }
   }
+
+
+  useEffect(() => {
+    show_num();
+  }, []);
+
+
+  async function perform_calc(arithmetic: any){
+    try{
+      await Api.post('/answer', {expression: arithmetic});
+    }catch(error){
+      console.error('calculation error', error)
+    }
+  }
   
 
-  async function show_digits(value: any){
+  function show_digits(value: any){
 
-    if (value == '='){
+    if (value === '='){
+      console.log(digits)
+      perform_calc(digits)
 
       setNum_display(digits)
       setDigits('')
+     
 
-      try{
-        await Api.post('/calculate', {expression: num_display})
-        show_num()
-      }catch(error){
-        console.error('calculation error', error)
-      }
     }
     else {
       setDigits(digits + value)
     }
   }
 
-
-
-  useEffect(() => {
-    show_num();
-  }, []);
+  
 
   // Initialise array of numbers and signs
   const numbers: any = [1, 2, 3, "+", 4, 5, 6, "-", 7, 8, 9, "*", ".", 0, "C", "÷", "DEL", "√", "%", "="];

@@ -35,7 +35,7 @@ def show_display():
 
 
 
-@app.post("/calculate")
+@app.post("/answer")
 def calculate(req: CalculationRequest):
     expression = req.expression
     try:
@@ -48,5 +48,5 @@ def calculate(req: CalculationRequest):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host='0.0.0.0', port=8000)
+    uvicorn.run("main:app", port=8000, reload=True)
 

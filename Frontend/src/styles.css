@@ -71,10 +71,10 @@
     border: 1px solid rgba(81, 92, 68, 0.568);
     box-shadow: 0 8px 32px 0 rgba(0,0,0,37);
     border-radius: 4%;
-    left: 2%;
+    left: 3%;
     margin-top: 5%;
     min-height: 30%;
-    min-width: 88%;
+    max-width: 92%;
     position: absolute ;
     text-align:end;
 }
@@ -82,17 +82,18 @@
 
 .Input_area{
     background-color: transparent;
+    bottom: 0;
     display: grid;
     grid-gap: 0;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    height: 55vh;
+    min-height: 63%;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 65%;
-    padding-top: 5%;
-    position: fixed ;
-    width: 100%;
+    margin-top: 80%;
+    min-width: 100%;
+    position: fixed;
+    
 }
 
 .Input{
@@ -105,7 +106,7 @@
     font-size: large;
     height: 70%;
     justify-self: center;
-    width: 80%;
+    min-width: 70%;
 
 }
 

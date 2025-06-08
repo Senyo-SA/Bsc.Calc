@@ -48,6 +48,7 @@ function Calculate() {
     }
     else if (value === 'C'){
       setDigits('')
+      setNum_display('0')
     }
     else {
       setDigits(digits + value)

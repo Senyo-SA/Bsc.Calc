@@ -50,10 +50,19 @@ function Calculate() {
       setDigits('')
       setNum_display('0')
     }
+    else if(digits[digits.indexOf(value) -1] === '√'){
+      value = Math.sqrt(digits[digits.indexOf(value)])
+      setDigits(digits.replace('√', ''))
+      setDigits(digits + value)
+      console.log(digits)
+
+    }
     else {
       setDigits(digits + value)
     }
   }
+
+  console.log(digits)
 
   
 

@@ -17,9 +17,10 @@ function Calculate() {
   }
 
 
-  useEffect(() => {
+  useEffect(() =>  {
+    console.log(digits.replace("√", ""));
     show_num();
-  }, []);
+  }, [digits.replace("√", "")]);
 
 
   async function perform_calc(arithmetic: any){
@@ -50,19 +51,15 @@ function Calculate() {
       setDigits('')
       setNum_display('0')
     }
-    else if(digits[digits.indexOf(value) -1] === '√'){
-      value = Math.sqrt(digits[digits.indexOf(value)])
-      setDigits(digits.replace('√', ''))
-      setDigits(digits + value)
-      console.log(digits)
-
+    else if(digits[digits.length - 1] === "√"){
+      setDigits(digits + Math.sqrt(value))
     }
     else {
-      setDigits(digits + value)
+      setDigits(digits.replace("√", "") + value)
+      
     }
-  }
 
-  console.log(digits)
+  }
 
   
 

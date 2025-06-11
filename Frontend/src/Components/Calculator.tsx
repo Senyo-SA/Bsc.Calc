@@ -64,7 +64,7 @@ function Calculate() {
   
 
   // Initialise array of numbers and signs
-  const numbers: any = [1, 2, 3, "+", 4, 5, 6, "-", 7, 8, 9, "*", ".", 0, "C", "÷", "DEL", "√", "%", "="];
+  const numbers: any = ["C", "DEL", "%", "+", 1, 2, 3, "-", 4, 5, 6, "*", 7, 8, 9, "÷", ".", 0, "√",  "="];
 
   // Initialise empty array for button components
   const display = [];

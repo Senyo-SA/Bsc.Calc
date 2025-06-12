@@ -44,6 +44,9 @@ function Calculate() {
       window.location.reload()
 
     }
+    else if (digits[digits.length - 1] === '%'){
+      setDigits(digits + value / 100)
+    }
     else if (value === 'DEL'){
       setDigits(digits.slice(0, -1))
     }
@@ -56,7 +59,7 @@ function Calculate() {
     }
     else {
       setDigits(digits.replace("√", "") + value)
-      
+      setDigits(digits.replace("%", "") + value)
     }
 
   }

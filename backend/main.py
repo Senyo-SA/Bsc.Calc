@@ -22,9 +22,10 @@ app.add_middleware(
     allow_headers=['*']
     )
 
+# generates the default value and information
 update = ['0']
 
-
+# The get function displaying the information
 @app.get("/calculate", response_model=CalculationRequest)
 def show_display():
     result = CalculationRequest(expression = update[0]) 
@@ -34,7 +35,7 @@ def show_display():
         return {'error': 'empty or invalid'}
 
 
-
+# Post function performs calculation on the string and returns the evaluated answer
 @app.post("/answer")
 def calculate(req: CalculationRequest):
     expression = req.expression

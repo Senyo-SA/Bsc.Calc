@@ -3,10 +3,14 @@ import { useEffect, useState } from 'react';
 
 function Calculate() {
 
+
+  // use state to update the number displayed 
   const [num_display, setNum_display] = useState('')
 
+  // used to update the inputted digits and signs
   const [digits , setDigits] : any = useState('')
 
+  // ffunction calls the api to return the value
   async function show_num(){
     try{
       const response = await Api.get('/calculate');
@@ -16,13 +20,13 @@ function Calculate() {
     }
   }
 
-
+  // use effect to run function on start and show digits on console
   useEffect(() =>  {
     console.log(digits.replace("√", ""));
     show_num();
   }, [digits.replace("√", "")]);
 
-
+  // Sends the input to the backend to calculate and return the answer
   async function perform_calc(arithmetic: any){
     try{
       await Api.post('/answer', {expression: arithmetic});
@@ -31,7 +35,8 @@ function Calculate() {
     }
   }
   
-
+  // A function to update the digits and values from click
+  // Depending on the digit clicked 
   function show_digits(value: any){
 
     if (value === '='){
@@ -72,6 +77,7 @@ function Calculate() {
   // Initialise empty array for button components
   const display = [];
 
+  // inputs the numbers abd signs and generates the buttons
   for (let num: number = 0; num < 20; num++) {
     display.push(
       <button key={num} className="Input" onClick={() => show_digits(numbers[num].toString())}>
@@ -80,6 +86,7 @@ function Calculate() {
     );
   }
 
+  // Returns GUI for the calculator form
   return (
     <div className="Calculator">
       <form action="get" className="Display_area">

@@ -9,11 +9,12 @@ class CalculationRequest(BaseModel):
 
 app = FastAPI() 
 
-
+# Declare the port origin and url for the frontend website 
 origins = [
     "http://localhost:3000"
 ]
  
+# Use middleware for security screening 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -47,7 +48,7 @@ def calculate(req: CalculationRequest):
         return {"error": "Invalid expression"}
     
 
-
+# Main function to run the backend app
 if __name__ == "__main__":
     uvicorn.run("main:app", port=8000, reload=True)
 

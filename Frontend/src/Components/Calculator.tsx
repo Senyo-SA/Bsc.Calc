@@ -39,6 +39,7 @@ function Calculate() {
   // Depending on the digit clicked 
   function show_digits(value: any){
 
+    // Function to return the calculation result when = is clicked by reloading the page
     if (value === '='){
 
       perform_calc(digits)
@@ -49,19 +50,29 @@ function Calculate() {
       window.location.reload()
 
     }
+
+    // returns percentage of the value
     else if (digits[digits.length - 1] === '%'){
       setDigits(digits + value / 100)
     }
+
+    // Deletes the last input 
     else if (value === 'DEL'){
       setDigits(digits.slice(0, -1))
     }
+
+    // Clears all inputs
     else if (value === 'C'){
       setDigits('')
       setNum_display('0')
     }
+
+    // returns the square root of the next input
     else if(digits[digits.length - 1] === "√"){
       setDigits(digits + Math.sqrt(value))
     }
+
+    // updates values without the signs 
     else {
       setDigits(digits.replace("√", "") + value)
       setDigits(digits.replace("%", "") + value)

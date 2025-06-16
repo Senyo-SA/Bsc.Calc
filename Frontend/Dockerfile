@@ -8,6 +8,8 @@ COPY tsconfig.json ./
 
 RUN npm install
 
+RUN npm install axios
+
 RUN npm install -g typescript
 
 COPY . .

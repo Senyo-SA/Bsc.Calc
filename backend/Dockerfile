@@ -4,6 +4,8 @@ WORKDIR /app
 
 RUN pip install fastapi uvicorn
 
+RUN apt-get update && apt-get install -y curl
+
 COPY  . /app
 
 EXPOSE 8000

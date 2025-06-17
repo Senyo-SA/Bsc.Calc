@@ -1,16 +1,25 @@
 
 
 services:
-  frontend: 
-    build: 
-      dockerfile: Dockerfile
-      context: Frontend/
-    ports:
-      - "3000:3000"
-
   backend:
     build:
       dockerfile: Dockerfile
       context: Backend/
     ports:
       - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/calculate"]
+      interval: 2s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  frontend: 
+    build: 
+      dockerfile: Dockerfile
+      context: Frontend/
+    ports:
+      - "3000:3000"
+    depends_on:
+      backend:
+        condition: service_healthy

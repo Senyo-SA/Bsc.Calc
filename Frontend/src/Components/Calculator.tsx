@@ -10,7 +10,8 @@ function Calculate() {
   // used to update the inputted digits and signs
   const [digits , setDigits] : any = useState('')
 
-  // ffunction calls the api to return the value
+  // function calls the api to return the value
+  // returns error when unable to return api call
   async function show_num(){
     try{
       const response = await Api.get('/calculate');
@@ -47,6 +48,7 @@ function Calculate() {
       setNum_display(digits)
       setDigits('')
 
+      // reloads the page to get the calculated values from the api
       window.location.reload()
 
     }
@@ -89,6 +91,8 @@ function Calculate() {
   const display = [];
 
   // inputs the numbers abd signs and generates the buttons
+  // updates to display the digits and signs when clicked
+  // updates the answers to display after fetching from api
   for (let num: number = 0; num < 20; num++) {
     display.push(
       <button key={num} className="Input" onClick={() => show_digits(numbers[num].toString())}>
@@ -104,7 +108,7 @@ function Calculate() {
         <input className='Input_Area'  placeholder={num_display} type='text' value={digits}/>
       </form>
 
-      <div className="Input_area"> {display} </div>
+      <div className="Input_area"> {display} </div> 
     </div>
   );
 }

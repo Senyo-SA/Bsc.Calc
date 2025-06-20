@@ -42,6 +42,8 @@ def calculate(req: CalculationRequest):
     expression = req.expression
     try:
         # eval function performs calculation on the string expression from the post command
+
+        
         expression = eval(expression)
         update[0] = str(expression)
         return str(expression)

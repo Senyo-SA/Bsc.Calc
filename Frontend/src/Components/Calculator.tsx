@@ -52,12 +52,6 @@ function Calculate() {
       window.location.reload()
 
     }
-
-    // returns percentage of the value
-    else if (digits[digits.length - 1] === '%'){
-      setDigits(digits + value / 100)
-    }
-
     // Deletes the last input 
     else if (value === 'DEL'){
       setDigits(digits.slice(0, -1))
@@ -69,15 +63,10 @@ function Calculate() {
       setNum_display('0')
     }
 
-    // returns the square root of the next input
-    else if(digits[digits.length - 1] === "√"){
-      setDigits(digits + Math.sqrt(value))
-    }
-
     // updates values without the signs 
     else {
-      setDigits(digits.replace("√", "") + value)
-      setDigits(digits.replace("%", "") + value)
+      setDigits(digits + value)
+      setDigits(digits + value)
     }
 
   }

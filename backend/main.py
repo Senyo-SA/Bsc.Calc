@@ -44,11 +44,23 @@ def calculate(req: CalculationRequest):
         # eval function performs calculation on the string expression from the post command
         # check if result has percentage or square root sign
 
-        while True:
+        sign = True
+        count = 1
+
+        while sign:
             if '%' in expression:
-                newInt = expression[expression.index("%") + 1]
+                newInt = expression[expression.index("%") - 1]
+                
+                if expression[expression.index(newInt) - 1].isdigit():
+                    count = count + 1
+                    newInt = newInt +  expression[expression.index(newInt) - count]
                 print("found")
             elif '√' in expression:
+                newInt = expression[expression.index("√") + 1]
+                
+                if expression[expression.index(newInt) + 1].isdigit():
+                    count = count + 1
+                    newInt = newInt +  expression[expression.index(newInt) + count]
                 print('found2')
         
         expression = eval(expression)

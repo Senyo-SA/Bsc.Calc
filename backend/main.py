@@ -54,6 +54,9 @@ def calculate(req: CalculationRequest):
                 if expression[expression.index(newInt) - 1].isdigit():
                     count = count + 1
                     newInt = newInt +  expression[expression.index(newInt) - count]
+                else:
+                    sign = False
+                
                 print("found")
             elif '√' in expression:
                 newInt = expression[expression.index("√") + 1]
@@ -61,6 +64,8 @@ def calculate(req: CalculationRequest):
                 if expression[expression.index(newInt) + 1].isdigit():
                     count = count + 1
                     newInt = newInt +  expression[expression.index(newInt) + count]
+                else:
+                    sign = False
                 print('found2')
         
         expression = eval(expression)

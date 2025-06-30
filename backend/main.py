@@ -57,7 +57,7 @@ def calculate(req: CalculationRequest):
                 else:
                     sign = False
                 
-                print("found")
+                print("test for squared number")
             elif '√' in expression:
                 newInt = expression[expression.index("√") + 1]
                 
@@ -66,7 +66,7 @@ def calculate(req: CalculationRequest):
                     newInt = newInt +  expression[expression.index(newInt) + count]
                 else:
                     sign = False
-                print('found2')
+                print('test for squared number')
         
         expression = eval(expression)
         update[0] = str(expression)

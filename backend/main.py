@@ -58,6 +58,10 @@ def calculate(req: CalculationRequest):
                     sign = False
                 
                 print("test for squared number")
+
+
+                newInt = newInt / 100
+
             elif '√' in expression:
                 newInt = expression[expression.index("√") + 1]
                 
@@ -67,6 +71,8 @@ def calculate(req: CalculationRequest):
                 else:
                     sign = False
                 print('test for squared number')
+
+                newInt = newInt ** 0.5
         
         expression = eval(expression)
         update[0] = str(expression)

@@ -44,6 +44,10 @@ def calculate(req: CalculationRequest):
         # eval function performs calculation on the string expression from the post command
         # check if result has percentage or square root sign
 
+        # functions for square root and percentage.
+        # perform square root and percentage functions before eval
+        # check for the square rooted and percentage numbers, apply the functions and reapply them to the expression 
+
         sign = True
         count = 1
 
